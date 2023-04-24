@@ -1,0 +1,6 @@
+glove.*.txt
+glove.*.zip
+.ipynb_checkpoints/
+*.ipynb
+**.pyc
+/venv/
