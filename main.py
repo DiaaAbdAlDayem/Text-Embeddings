@@ -18,6 +18,11 @@ class EmbeddingResponse(BaseModel):
     embeddings: List[float]
 
 
+@app.get("/healthz")
+async def health():
+    return {"status": "OK"}
+
+
 @app.post("/embeddings", response_model=EmbeddingResponse)
 async def create_embeddings(input_text: InputText) -> EmbeddingResponse:
     embeddings = model.encode(input_text.text)
